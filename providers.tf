@@ -20,6 +20,7 @@ terraform {
 provider "azurerm" {
   features {
   }
+  use_msi = true
   skip_provider_registration = true
   subscription_id = "3c77aee9-6f8b-4f87-8ff4-1e85ca74f8be"
 }
