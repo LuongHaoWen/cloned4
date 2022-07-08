@@ -88,6 +88,6 @@ resource "azurerm_network_interface" "interview-ni" {
 
 
 
-#setup for gha vm
+
 
 

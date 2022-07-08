@@ -31,3 +31,8 @@ output "interview-interface"{
 output "interview-vnet"{
   value = azurerm_virtual_network.interview-vnet.name
 }
+
+
+output "terraform_identity_object_id" {
+  value = azurerm_user_assigned_identity.user-identity.principal_id
+}
