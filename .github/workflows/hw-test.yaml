@@ -39,8 +39,7 @@ jobs:
         cli_config_credentials_token: YHrzispc3GWkfA.atlasv1.rzpf9pHW4fQa2TX3oUwkDPUY6V8Sh97C0RMur6e9ZPXHYtjsZNHchQCf4yhVgzWnChg
 
 
-    - name: az login
-      run: az login --identity 
+    
 
     - name: az account set
       run: az account set -s "CloudCover Playground"
