@@ -2,7 +2,8 @@
 variable "email_name"{
   type=string
   nullable = false
-  description ="candidates email without special characters"
+  description ="candidates email"
+  default = "hello"
    }
  
 
