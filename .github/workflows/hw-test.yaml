@@ -7,9 +7,9 @@ on:
   pull_request:
 env:
   ARM_USE_MSI: true
-  ARM_SUBSCRIPTION_ID: ${{ secrets.SUBID }}
-  ARM_TENANT_ID: ${{ secrets.TENANTID }}
-  ARM_CLIENT_ID: ${{ secrets.CLIENTID }}
+  ARM_SUBSCRIPTION_ID: 3c77aee9-6f8b-4f87-8ff4-1e85ca74f8be
+  ARM_TENANT_ID: cb051081-0828-4f81-b5ae-b6c75a0caa81
+  ARM_CLIENT_ID:  6b5f1478-dbc8-4b23-b5bf-c7ba1eadd1fa
 
 permissions:
   contents: read
@@ -37,6 +37,13 @@ jobs:
       uses: hashicorp/setup-terraform@v1
       with:
         cli_config_credentials_token: YHrzispc3GWkfA.atlasv1.rzpf9pHW4fQa2TX3oUwkDPUY6V8Sh97C0RMur6e9ZPXHYtjsZNHchQCf4yhVgzWnChg
+
+
+    - name: az login
+      run: az login --identity 
+
+    - name: az account set
+      run: az account set -s "CloudCover Playground"
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
     - name: Terraform Init
