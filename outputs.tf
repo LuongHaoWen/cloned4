@@ -36,3 +36,15 @@ output "interview-vnet"{
 output "terraform_identity_object_id" {
   value = azurerm_user_assigned_identity.user-identity.principal_id
 }
+
+output "SPN_username"{
+  value = azuread_service_principal.interview-spn.application_id
+  description = "interview SPN details"
+}
+output "SPN_tenant_id"{
+  value =azuread_service_principal.interview-spn.application_tenant_id
+}
+output "spn_password"{
+  value = azuread_service_principal_password.SPN_password.value
+  sensitive = true
+}

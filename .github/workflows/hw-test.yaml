@@ -20,7 +20,7 @@ jobs:
     runs-on: self-hosted
     environment: production
 
-    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    # Use the Bash shell regardless interview-rg-hello whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
         shell: bash
@@ -37,7 +37,7 @@ jobs:
       uses: hashicorp/setup-terraform@v1
       with:
         cli_config_credentials_token: YHrzispc3GWkfA.atlasv1.rzpf9pHW4fQa2TX3oUwkDPUY6V8Sh97C0RMur6e9ZPXHYtjsZNHchQCf4yhVgzWnChg
-
+        terraform_wrapper: false
 
     
 
@@ -68,3 +68,15 @@ jobs:
     - name: Terraform Apply
       #if: github.ref == 'refs/heads/"master"' or github.event_name == 'push'
       run: terraform apply -auto-approve -input=false
+
+
+
+      #get spn detials for interview
+     -name: get spn id
+      run: terraform output SPN_username
+
+     -name: get spn password
+      run: terraform output spn_password 
+
+     -name: get spn tenant id
+      run: terraform output SPN_tenant_id
