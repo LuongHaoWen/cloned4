@@ -70,13 +70,5 @@ jobs:
       run: terraform apply -auto-approve -input=false
 
 
-
-      #get spn detials for interview
-     -name: get spn id
-      run: terraform output SPN_username
-
-     -name: get spn password
-      run: terraform output spn_password 
-
-     -name: get spn tenant id
-      run: terraform output SPN_tenant_id
+    
+      
